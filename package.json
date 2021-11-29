@@ -1,0 +1,23 @@
+{
+  "name": "retro-synthwave",
+  "version": "1.0.0",
+  "description": "Render 2D Synthwave Canvas",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [
+    "canvas",
+    "2D",
+    "3D",
+    "synthwave",
+    "retro"
+  ],
+  "author": "Simon Gattner",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "latest"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
