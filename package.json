@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Render 2D Synthwave Canvas",
   "source": "src/index.html",
+  "prettier": "@boxine/prettier-config",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "format": "prettier --write \"**/*.{js,ts,tsx}\""
   },
   "keywords": [
     "canvas",
@@ -17,7 +19,9 @@
   "author": "Simon Gattner",
   "license": "MIT",
   "devDependencies": {
-    "parcel": "latest"
+    "@boxine/prettier-config": "^1.8.0-rc.0",
+    "parcel": "latest",
+    "prettier": "^2.5.0"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
