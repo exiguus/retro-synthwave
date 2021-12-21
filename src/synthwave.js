@@ -1,6 +1,7 @@
 let canvas, c, w, h, u, points, offset, spacing, gradient
 
-function init() {
+// spacing: X Coordinate spacing
+function init({ spacing = 40, zOffset = 10 }) {
   // create canvas element and adjust the element size
   canvas = document.createElement('canvas')
   canvas.width = w = innerWidth
@@ -12,8 +13,6 @@ function init() {
   c.translate(w / 2, h / 2)
   // append the canvas to the html document body
   document.getElementById('synthwave').appendChild(canvas)
-  // X Coordinate spacing
-  spacing = 40
   // Create a Matrix with 30 lines and 60 rows
   //  by creating a Array with a length of 30 and fill each item with a value of 0
   //  then map each item and change the value to a Array with a length of 60, each item filled with  a value of 0
@@ -30,7 +29,7 @@ function init() {
       points[i][j] = {
         x: j * spacing, // x position increased in every loop by a factor of n+1
         y: Math.random() * -(dist * dist) + 30, // y position randomly lowered in a flat tapered curve
-        z: -i * 10, // z position of the column
+        z: -i * zOffset, // z position of the column
       }
     }
   }
