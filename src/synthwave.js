@@ -11,7 +11,7 @@ function init() {
   // translate the starting points of the coordinate system to the center / middle of the canvas
   c.translate(w / 2, h / 2)
   // append the canvas to the html document body
-  document.body.appendChild(canvas)
+  document.getElementById('synthwave').appendChild(canvas)
   // X Coordinate spacing
   spacing = 40
   // Create a Matrix with 30 lines and 60 rows
@@ -50,7 +50,8 @@ function init() {
 let previousTime
 
 // update current z position and request a animation frame
-function update(time) { // the requestAnimationFrame callback has a single argument, a DOMHighResTimeStamp
+function update(time) {
+  // the requestAnimationFrame callback has a single argument, a DOMHighResTimeStamp
   // Check < -300
   // DEBUG
   let z300CountSmaller = 0
@@ -103,7 +104,7 @@ function update(time) { // the requestAnimationFrame callback has a single argum
 }
 
 function show() {
-  // Clear pixels in the context area and set them transparent black 
+  // Clear pixels in the context area and set them transparent black
   c.clearRect(-w / 2, -h / 2, w, h)
   // Start draw new in the cleared area
   c.beginPath()
@@ -155,4 +156,4 @@ function show() {
   }
 }
 
-init()
+export default init
