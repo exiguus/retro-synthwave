@@ -20,6 +20,9 @@
   "license": "MIT",
   "devDependencies": {
     "@boxine/prettier-config": "^1.8.0-rc.0",
+    "@parcel/compressor-brotli": "^2.0.1",
+    "@parcel/compressor-gzip": "^2.0.1",
+    "@parcel/config-default": "^2.0.1",
     "parcel": "latest",
     "prettier": "^2.5.0"
   },
