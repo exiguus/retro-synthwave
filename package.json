@@ -1,13 +1,14 @@
 {
   "name": "retro-synthwave",
   "version": "1.0.0",
-  "description": "Render 2D Synthwave Canvas",
+  "description": "Render 3D animations with canvas 2d context",
   "source": "src/index.html",
   "prettier": "@boxine/prettier-config",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
-    "format": "prettier --write \"**/*.{js,ts,tsx}\""
+    "start": "parcel --no-cache",
+    "dev": "npm start",
+    "build": "rm -rf ./dist && parcel build",
+    "format": "prettier --write \"**/*.{js,ts,tsx,css}\""
   },
   "keywords": [
     "canvas",
@@ -23,8 +24,9 @@
     "@parcel/compressor-brotli": "^2.0.1",
     "@parcel/compressor-gzip": "^2.0.1",
     "@parcel/config-default": "^2.0.1",
-    "parcel": "latest",
-    "prettier": "^2.5.0"
+    "parcel": "^2.2.0",
+    "prettier": "^2.5.0",
+    "prettier-plugin-style-order": "^0.2.2"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {

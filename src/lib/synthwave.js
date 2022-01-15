@@ -1,7 +1,9 @@
+// Understand canvas 2d context 3d animation
+//  original code: https://github.com/victorqribeiro/retroSynthwave
 let canvas, c, w, h, u, points, offset, spacing, gradient
 
 // spacing: X Coordinate spacing
-function init({ spacing = 40, zOffset = 10 }) {
+function init({ element, spacing = 40, zOffset = 10 }) {
   // create canvas element and adjust the element size
   canvas = document.createElement('canvas')
   canvas.width = w = innerWidth
@@ -12,7 +14,7 @@ function init({ spacing = 40, zOffset = 10 }) {
   // translate the starting points of the coordinate system to the center / middle of the canvas
   c.translate(w / 2, h / 2)
   // append the canvas to the html document body
-  document.getElementById('synthwave').appendChild(canvas)
+  element.appendChild(canvas)
   // Create a Matrix with 30 lines and 60 rows
   //  by creating a Array with a length of 30 and fill each item with a value of 0
   //  then map each item and change the value to a Array with a length of 60, each item filled with  a value of 0
