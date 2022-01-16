@@ -86,29 +86,29 @@ menu h1 {
 
 menu nav {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   flex-wrap: wrap;
-  margin: 0 -.5rem;
-  color: hsl(329deg  100% 36%);
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 -0.5rem;
+  color: hsl(329deg 100% 36%);
   animation: top-animate 2.6s ease-in 1 alternate;
 }
 
 menu button {
   display: inline-block;
-  padding: 0.5rem 1rem;
   margin: 0.5rem;
+  padding: 0.5rem 1rem;
   color: inherit;
   font-weight: bold;
   line-height: 1;
   text-shadow: 1px 1px hsla(45, 100%, 50%, 0.2);
+  word-break: none;
   background-color: transparent;
   border: 2px solid hsl(315deg 100% 27%);
   border-radius: 3px;
   box-shadow: -1px 1px 0.5rem hsla(45deg, 100%, 50%, 0.2);
   transition: color 0.1s ease-in;
   line-break: none;
-  word-break: none;
 }
 
 menu button:hover {

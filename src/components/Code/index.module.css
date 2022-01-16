@@ -10,14 +10,17 @@
 
 .code {
   position: fixed;
-  bottom: 1.5rem;
   right: 1.5rem;
+  bottom: 1.5rem;
   width: calc(100vw - 3rem);
+  max-width: 1024px;
   max-height: 66.6vh;
   overflow: auto;
   transform-origin: right;
   animation: right-animate 1s ease 1 alternate;
-  max-width: 1024px;
+  -ms-overflow-style: auto;
+  scrollbar-color: hsl(55deg 100% 50%) hsl(329deg 100% 36%);
+  scrollbar-width: thin;
 }
 
 .code::-webkit-scrollbar-thumb {
@@ -35,12 +38,6 @@
 .code::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
-}
-
-.code {
-  -ms-overflow-style: auto;
-  scrollbar-color: hsl(55deg 100% 50%) hsl(329deg 100% 36%);
-  scrollbar-width: thin;
 }
 
 .section {
@@ -71,6 +68,9 @@
   max-width: 100%;
   padding: 0 1rem 1rem;
   overflow: auto;
+  -ms-overflow-style: auto;
+  scrollbar-color: hsl(283deg 97% 75%) hsl(93deg 98% 68%);
+  scrollbar-width: thin;
 }
 
 .section pre::-webkit-scrollbar-thumb {
@@ -90,13 +90,7 @@
   height: 0.5rem;
 }
 
-.code,
-.section pre {
-  -ms-overflow-style: auto;
-  scrollbar-color: hsl(283deg 97% 75%) hsl(93deg 98% 68%);
-  scrollbar-width: thin;
-}
-
+/* Overwrite the default styles from highlighter */
 .highlighter {
   padding: 1rem !important;
   line-height: 1.2;
