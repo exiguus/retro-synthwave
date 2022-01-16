@@ -2,7 +2,9 @@
 
 The goal of this project is to understand and learn 3d animations with canvas 2d context.
 
-The Example _Retro Synthwave_ code is based on the [work of Victor Ribeiro](https://github.com/victorqribeiro/retroSynthwave).
+The Example _Retro Synthwave_ code is based on the great [work of Victor Ribeiro](https://github.com/victorqribeiro/retroSynthwave).
+
+![Retro Synthwave](https://raw.githubusercontent.com/exiguus/retro-synthwave/main/assets/retro-synthwave.png)
 
 The [app runs and show](http://retro-synthwave.vercel.app/) the code at the same time.
 
