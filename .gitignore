@@ -1,4 +1,5 @@
 .parcel-cache
 dist
+parcel-bundle-reports
 node_modules
 TODO.md

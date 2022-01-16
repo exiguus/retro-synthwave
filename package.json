@@ -2,15 +2,20 @@
   "name": "retro-synthwave",
   "version": "1.0.0",
   "description": "Render 3D animations with canvas 2d context",
-  "source": "src/index.html",
   "prettier": "@boxine/prettier-config",
   "scripts": {
-    "prestart": "node ./build",
-    "start": "parcel --no-cache",
-    "dev": "npm start",
-    "prebuild": "node ./build",
-    "build": "rm -rf ./dist && parcel build",
-    "format": "prettier --write \"**/*.{js,ts,tsx,css}\""
+    "predev": "npm run fetch:data",
+    "serve": "NODE_ENV=development parcel serve ./src/index.html --no-cache",
+    "dev": "npm run serve",
+    "start": "npm install && npm run dev",
+    "fetch:data": "node ./build",
+    "prebuild": "npm run fetch:data",
+    "postbuild": "npm run build:report",
+    "build": "npm run build:app ",
+    "build:app": "rm -rf ./dist/ && NODE_ENV=production parcel build ./src/index.html --dist-dir ./dist --no-cache --detailed-report 10 --reporter @parcel/reporter-bundle-analyzer --public-url /",
+    "build:report": "mv ./parcel-bundle-reports/default.html ./dist/report.html && rm -rf ./parcel-bundle-reports",
+    "format": "prettier --write \"**/*.{js,ts,tsx,css}\"",
+    "type-check": "tsc --pretty --noEmit"
   },
   "keywords": [
     "canvas",
@@ -19,21 +24,71 @@
     "synthwave",
     "retro"
   ],
-  "author": "Simon Gattner",
-  "license": "MIT",
   "devDependencies": {
     "@boxine/prettier-config": "^1.8.0-rc.0",
     "@parcel/compressor-brotli": "^2.0.1",
     "@parcel/compressor-gzip": "^2.0.1",
     "@parcel/config-default": "^2.0.1",
+    "@parcel/reporter-bundle-analyzer": "^2.2.0",
+    "install": "^0.13.0",
     "parcel": "^2.2.0",
     "prettier": "^2.5.0",
     "prettier-plugin-style-order": "^0.2.2"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-syntax-highlighter": "^15.4.5"
-  }
+  },
+  "compress": {
+    "test": "(.js|report.html)",
+    "concurrency": 2,
+    "gzip": {
+      "enabled": true,
+      "numiterations": 15,
+      "blocksplitting": true,
+      "blocksplittinglast": false,
+      "blocksplittingmax": 15,
+      "zlib": false,
+      "zlibLevel": 9,
+      "zlibMemLimit": 9
+    },
+    "brotli": {
+      "enabled": true,
+      "mode": 0,
+      "quality": 11,
+      "lgwin": 24,
+      "enable_context_modeling": true
+    },
+    "compressOutput": false
+  },
+  "author": {
+    "name": "Simon Gattner",
+    "url": "https://gattner.name/",
+    "twitter": "https://twitter.com/exiguus_"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exiguus/retro-synthwave.git"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5% and last 2 versions",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all",
+      "not IE_Mob 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">= 6.0.1"
+  },
+  "engineStrict": true
 }
