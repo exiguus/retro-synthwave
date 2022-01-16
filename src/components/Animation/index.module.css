@@ -1,0 +1,131 @@
+@keyframes left-animate {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes top-animate {
+  0% {
+    color: hsl(289deg 100% 21%);
+    opacity: 0;
+  }
+
+  100% {
+    color: hsl(329deg 100% 36%);
+    opacity: 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(black, rgb(100, 0, 50), black);
+}
+
+menu {
+  position: fixed;
+  top: 1.5rem;
+  padding: 0 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 920px) {
+  menu {
+    right: 1.5rem;
+    left: auto;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 919px) {
+  menu {
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+}
+
+menu h1 {
+  height: 1.6rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 1.2rem;
+  overflow: hidden;
+  color: rgb(37, 28, 12);
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  white-space: nowrap;
+  background-image: linear-gradient(
+    85deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(289deg 100% 21%) 1%,
+    hsl(315deg 100% 27%) 6%,
+    hsl(329deg 100% 36%) 14%,
+    hsl(337deg 100% 43%) 26%,
+    hsl(357deg 91% 59%) 40%,
+    hsl(17deg 100% 59%) 55%,
+    hsl(34deg 100% 53%) 71%,
+    hsl(45deg 100% 50%) 87%,
+    hsl(55deg 100% 50%) 100%
+  );
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transform-origin: left;
+  animation: left-animate 1s ease-out 1 alternate;
+}
+
+menu nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -.5rem;
+  color: hsl(329deg  100% 36%);
+  animation: top-animate 2.6s ease-in 1 alternate;
+}
+
+menu button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  color: inherit;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 1px 1px hsla(45, 100%, 50%, 0.2);
+  background-color: transparent;
+  border: 2px solid hsl(315deg 100% 27%);
+  border-radius: 3px;
+  box-shadow: -1px 1px 0.5rem hsla(45deg, 100%, 50%, 0.2);
+  transition: color 0.1s ease-in;
+  line-break: none;
+  word-break: none;
+}
+
+menu button:hover {
+  border-color: hsl(337deg 100% 43%);
+}
+
+menu button:focus {
+  color: hsl(337deg 100% 43%);
+  outline: 2px solid hsl(240deg 100% 20%);
+}
+
+menu button:active {
+  color: hsl(337deg 100% 43%);
+  border-color: hsl(289deg 100% 21%);
+  box-shadow: none;
+}
+
+.animation {
+  display: block;
+}

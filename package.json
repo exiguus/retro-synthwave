@@ -5,8 +5,10 @@
   "source": "src/index.html",
   "prettier": "@boxine/prettier-config",
   "scripts": {
+    "prestart": "node ./build",
     "start": "parcel --no-cache",
     "dev": "npm start",
+    "prebuild": "node ./build",
     "build": "rm -rf ./dist && parcel build",
     "format": "prettier --write \"**/*.{js,ts,tsx,css}\""
   },
@@ -31,6 +33,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-syntax-highlighter": "^15.4.5"
   }
 }
