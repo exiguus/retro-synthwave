@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import * as classes from './index.module.css'
 
 export const Loading: FunctionComponent = () => {
