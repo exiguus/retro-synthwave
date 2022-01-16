@@ -1,5 +1,19 @@
 // Understand canvas 2d context 3d animation
 //  original code: https://github.com/victorqribeiro/retroSynthwave
+
+//
+// Three steps are required to get this animation running:
+// 1. init() the matrix system
+//    create a 2d canvas context
+//    create the matrix and points (x, y, z)
+// 2. update() the initialised matrix
+//    change each point (x, y, z)
+//    call show() and request a animation frame by it self recursively
+// 3. show() the changes
+//    draw changes to the canvas
+//
+// update() call show() and then request the animation frame that call update()
+
 let canvas, c, w, h, u, points, offset, spacing, gradient
 
 // spacing: X Coordinate spacing
