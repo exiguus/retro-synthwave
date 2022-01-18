@@ -10,8 +10,6 @@
       name="description"
       content="Look into Retro Synthwave Canvas 2d Context 3d animation"
     />
-
-    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://retro-synthwave.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Retro Synthwave" />
@@ -23,8 +21,6 @@
       property="og:image"
       content="https://raw.githubusercontent.com/exiguus/retro-synthwave/main/assets/retro-synthwave.png"
     />
-
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="retro-synthwave.vercel.app" />
     <meta
@@ -40,6 +36,24 @@
       name="twitter:image"
       content="https://raw.githubusercontent.com/exiguus/retro-synthwave/main/assets/retro-synthwave.png"
     />
+    <script>
+      if (
+        !sessionStorage.getItem('_swa') &&
+        document.referrer.indexOf(location.protocol + '//' + location.host) !==
+          0
+      ) {
+        fetch(
+          'https://counter.dev/track?' +
+            new URLSearchParams({
+              referrer: document.referrer,
+              screen: screen.width + 'x' + screen.height,
+              user: 'exiguus',
+              utcoffset: '1',
+            })
+        )
+      }
+      sessionStorage.setItem('_swa', '1')
+    </script>
     <title>Retro Synthwave Canvas 2d Context 3d animation</title>
   </head>
   <body>

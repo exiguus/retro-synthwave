@@ -14,7 +14,7 @@
     "build": "npm run build:app ",
     "build:app": "rm -rf ./dist/ && NODE_ENV=production parcel build ./src/index.html --dist-dir ./dist --no-cache --detailed-report 10 --reporter @parcel/reporter-bundle-analyzer --public-url /",
     "build:report": "mv ./parcel-bundle-reports/default.html ./dist/report.html && rm -rf ./parcel-bundle-reports",
-    "format": "prettier --write \"**/*.{js,ts,tsx,css}\"",
+    "format": "prettier --write \"**/*.{js,ts,tsx,css,html}\"",
     "type-check": "tsc --pretty --noEmit"
   },
   "keywords": [
