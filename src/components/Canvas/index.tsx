@@ -1,7 +1,11 @@
 import { forwardRef } from 'react'
 import * as classes from './index.module.css'
 
-export const Canvas = forwardRef<HTMLDivElement>(({ children }, ref) => {
+export type CanvasProps = {
+  children?: React.ReactNode
+}
+
+export const Canvas = forwardRef<HTMLDivElement, CanvasProps>(({ children }, ref) => {
   return (
     <div className={classes.canvas} ref={ref}>
       {children}
