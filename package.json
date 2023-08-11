@@ -13,8 +13,9 @@
     "build:app": "rm -rf ./dist/ && NODE_ENV=production parcel build ./src/index.html --dist-dir ./dist --no-cache --detailed-report 10 --reporter @parcel/reporter-bundle-analyzer --public-url /",
     "build:report": "mv ./parcel-bundle-reports/default.html ./dist/report.html && rm -rf ./parcel-bundle-reports",
     "format": "prettier --write \"**/*.{js,ts,tsx,css,html}\"",
-    "test": "pnpm type-check",
-    "type-check": "tsc --pretty --noEmit"
+    "test": "pnpm check",
+    "check": "tsc --pretty --noEmit",
+    "prepare": "husky install"
   },
   "keywords": [
     "canvas",
@@ -25,6 +26,9 @@
   ],
   "devDependencies": {
     "@boxine/prettier-config": "^2.0.0",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/prompt-cli": "^17.7.1",
     "@parcel/compressor-brotli": "^2.9.3",
     "@parcel/compressor-gzip": "^2.9.3",
     "@parcel/config-default": "^2.9.3",
@@ -32,6 +36,8 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@types/react-syntax-highlighter": "^15.5.7",
+    "conventional-changelog-conventionalcommits": "^6.1.0",
+    "husky": "^8.0.3",
     "parcel": "^2.9.3",
     "prettier": "^2.8.8",
     "prettier-plugin-style-order": "^0.2.2",
