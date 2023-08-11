@@ -24,7 +24,7 @@
     "retro"
   ],
   "devDependencies": {
-    "@boxine/prettier-config": "^1.8.0-rc.0",
+    "@boxine/prettier-config": "^2.0.0",
     "@parcel/compressor-brotli": "^2.9.3",
     "@parcel/compressor-gzip": "^2.9.3",
     "@parcel/config-default": "^2.9.3",
@@ -33,7 +33,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/react-syntax-highlighter": "^15.5.7",
     "parcel": "^2.9.3",
-    "prettier": "^2.5.0",
+    "prettier": "^2.8.8",
     "prettier-plugin-style-order": "^0.2.2",
     "process": "^0.11.10",
     "typescript": "^4.5.4"
