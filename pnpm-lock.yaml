@@ -17,8 +17,8 @@ dependencies:
 
 devDependencies:
   '@boxine/prettier-config':
-    specifier: ^1.8.0-rc.0
-    version: 1.8.0-rc.0(prettier@2.5.0)
+    specifier: ^2.0.0
+    version: 2.0.0(prettier@2.8.8)
   '@parcel/compressor-brotli':
     specifier: ^2.9.3
     version: 2.9.3(@parcel/core@2.9.3)
@@ -44,11 +44,11 @@ devDependencies:
     specifier: ^2.9.3
     version: 2.9.3
   prettier:
-    specifier: ^2.5.0
-    version: 2.5.0
+    specifier: ^2.8.8
+    version: 2.8.8
   prettier-plugin-style-order:
     specifier: ^0.2.2
-    version: 0.2.2(prettier@2.5.0)
+    version: 0.2.2(prettier@2.8.8)
   process:
     specifier: ^0.11.10
     version: 0.11.10
@@ -87,21 +87,12 @@ packages:
       regenerator-runtime: 0.14.0
     dev: false
 
-  /@boxine/eslint-config-utils@1.8.0-rc.0:
-    resolution: {integrity: sha512-MsTJttfBm7YlNut0vlLI/rxVaCSChmOlc2PH+9QP7Lll4X16yl7Kvln8cmBdXep3v50bCSOEneSx91bs7N/lFg==}
-    hasBin: true
-    dependencies:
-      chalk: 3.0.0
-    dev: true
-
-  /@boxine/prettier-config@1.8.0-rc.0(prettier@2.5.0):
-    resolution: {integrity: sha512-rPDabvQ2GBRxQwlNHpTrqWw9n1Ccg/rRuwdh7JdqYXyt9k8P7yXH9IwMYwE5ieZIMzTYTdxdG/GrJ2HVEXXhbA==}
-    requiresBuild: true
+  /@boxine/prettier-config@2.0.0(prettier@2.8.8):
+    resolution: {integrity: sha512-vHqWM+fqoLROWSD82wp0zWuSWaU/uYo26Bbxh/S0ghewXGUWb2+gVNkWnenYm2+dFdxpwTfanM0+uKBcnJGVVA==}
     peerDependencies:
       prettier: 2.x
     dependencies:
-      '@boxine/eslint-config-utils': 1.8.0-rc.0
-      prettier: 2.5.0
+      prettier: 2.8.8
     dev: true
 
   /@lezer/common@0.15.12:
@@ -1264,14 +1255,6 @@ packages:
       supports-color: 5.5.0
     dev: true
 
-  /chalk@3.0.0:
-    resolution: {integrity: sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==}
-    engines: {node: '>=8'}
-    dependencies:
-      ansi-styles: 4.3.0
-      supports-color: 7.2.0
-    dev: true
-
   /chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
@@ -1963,18 +1946,18 @@ packages:
       posthtml-render: 3.0.0
     dev: true
 
-  /prettier-plugin-style-order@0.2.2(prettier@2.5.0):
+  /prettier-plugin-style-order@0.2.2(prettier@2.8.8):
     resolution: {integrity: sha512-4rASdHONhHLNX0arKqEvjGOEAbkSZE3+GQPSaS8mf3en/spjeN0le5fV1yKltWwQeM4UPn7CkKzeD97a4Az/6w==}
     peerDependencies:
       prettier: '>= 1.13'
     dependencies:
       postcss-sorting: 5.0.1
-      prettier: 2.5.0
+      prettier: 2.8.8
       resolve-cwd: 3.0.0
     dev: true
 
-  /prettier@2.5.0:
-    resolution: {integrity: sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==}
+  /prettier@2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
