@@ -4,18 +4,16 @@
   "description": "Render 3D animations with canvas 2d context",
   "prettier": "@boxine/prettier-config",
   "scripts": {
-    "predev": "npm run fetch:data",
+    "predev": "pnpm fetch:data",
     "serve": "NODE_ENV=development parcel serve ./src/index.html --no-cache",
-    "dev": "npm run serve",
-    "start": "npm install && npm run dev",
+    "dev": "pnpm serve",
+    "start": "npm install && pnpm dev",
     "fetch:data": "node ./build",
-    "prebuild": "npm run fetch:data",
-    "postbuild": "npm run build:report",
-    "build": "npm run build:app",
+    "build": "pnpm fetch:data && pnpm build:app && pnpm build:report",
     "build:app": "rm -rf ./dist/ && NODE_ENV=production parcel build ./src/index.html --dist-dir ./dist --no-cache --detailed-report 10 --reporter @parcel/reporter-bundle-analyzer --public-url /",
     "build:report": "mv ./parcel-bundle-reports/default.html ./dist/report.html && rm -rf ./parcel-bundle-reports",
     "format": "prettier --write \"**/*.{js,ts,tsx,css,html}\"",
-    "test": "npm run type-check",
+    "test": "pnpm type-check",
     "type-check": "tsc --pretty --noEmit"
   },
   "keywords": [
@@ -37,6 +35,7 @@
     "parcel": "^2.2.0",
     "prettier": "^2.5.0",
     "prettier-plugin-style-order": "^0.2.2",
+    "process": "^0.11.10",
     "typescript": "^4.5.4"
   },
   "dependencies": {
@@ -91,8 +90,18 @@
     ]
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">= 6.0.1"
+    "node": ">= 18.16.0",
+    "pnpm": ">= 8.6.12"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "svgo"
+      ],
+      "allowedVersions": {
+        "svgo": "2.8.0"
+      }
+    }
+  }
 }
