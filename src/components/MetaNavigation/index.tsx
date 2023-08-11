@@ -14,7 +14,10 @@ export const MetaNavigation = () => {
             </a>
           </li>
           <li>
-            <a href="https://gattner.name/" title="Front end development">
+            <a
+              href="https://www.gattner.name/"
+              title="Full-Stack and Frontend development"
+            >
               Simon Gattner
             </a>
           </li>

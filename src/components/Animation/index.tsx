@@ -5,18 +5,18 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
-import synthwave from '../../lib/synthwave'
 import { code } from '../../lib/synthwave.json'
 import { Canvas } from '../Canvas'
+import synthwave from '../../lib/synthwave'
 import * as classes from './index.module.css'
 
 const Code = React.lazy(() => import('../Code'))
 
 export default function Animation() {
   const refCanvas = useRef<HTMLDivElement>(null)
-  const [spacing, setSpacing] = useState(40)
-  const [zOffset, setZOffset] = useState(10)
-  const [showCode, setShowCode] = useState(false)
+  const [spacing, setSpacing] = useState<number>(40)
+  const [zOffset, setZOffset] = useState<number>(10)
+  const [showCode, setShowCode] = useState<boolean>(false)
 
   useLayoutEffect(() => {
     const currentCanvas = refCanvas.current
