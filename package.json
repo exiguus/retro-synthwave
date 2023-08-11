@@ -4,15 +4,17 @@
   "description": "Render 3D animations with canvas 2d context",
   "prettier": "@boxine/prettier-config",
   "scripts": {
-    "predev": "pnpm fetch:data",
     "serve": "NODE_ENV=development parcel serve ./src/index.html --no-cache",
-    "dev": "pnpm serve",
+    "dev": "pnpm create:source && pnpm serve",
     "start": "npm install && pnpm dev",
-    "fetch:data": "node ./build",
-    "build": "pnpm fetch:data && pnpm build:app && pnpm build:report",
+    "create:source": "node ./scripts/createJsonSource.cjs",
+    "build": "pnpm create:source && pnpm build:app && pnpm build:report",
     "build:app": "rm -rf ./dist/ && NODE_ENV=production parcel build ./src/index.html --dist-dir ./dist --no-cache --detailed-report 10 --reporter @parcel/reporter-bundle-analyzer --public-url /",
     "build:report": "mv ./parcel-bundle-reports/default.html ./dist/report.html && rm -rf ./parcel-bundle-reports",
-    "format": "prettier --write \"**/*.{js,ts,tsx,css,html}\"",
+    "format": "prettier \"**/*.{js,ts,tsx,css,html}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts,tsx,css,html}\"",
+    "lint": "eslint --ext .js,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src",
     "test": "pnpm check",
     "check": "tsc --pretty --noEmit",
     "prepare": "husky install"
@@ -25,6 +27,9 @@
     "retro"
   ],
   "devDependencies": {
+    "@boxine/eslint-config-base": "^2.0.0",
+    "@boxine/eslint-config-jest": "^2.0.0",
+    "@boxine/eslint-config-react": "^2.0.1",
     "@boxine/prettier-config": "^2.0.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
@@ -37,7 +42,9 @@
     "@types/react-dom": "^18.2.7",
     "@types/react-syntax-highlighter": "^15.5.7",
     "conventional-changelog-conventionalcommits": "^6.1.0",
+    "eslint": "^8.47.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "parcel": "^2.9.3",
     "prettier": "^2.8.8",
     "prettier-plugin-style-order": "^0.2.2",
@@ -95,9 +102,18 @@
       "last 1 safari version"
     ]
   },
+  "lint-staged": {
+    "*.@(ts|tsx|js|jsx|mjs|cjs)": [
+      "pnpm format:fix",
+      "pnpm lint:fix"
+    ],
+    "*.@(md|mdx|json)": [
+      "pnpm format:fix"
+    ]
+  },
   "engines": {
     "node": ">= 18.16.0",
-    "pnpm": ">= 8.6.12"
+    "pnpm": ">= 8.6.10"
   },
   "engineStrict": true,
   "pnpm": {

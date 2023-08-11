@@ -14,13 +14,16 @@
 //
 // update() call show() and then request the animation frame that call update()
 
-let canvas, c, w, h, u, points, offset, spacing, gradient
+// eslint-disable-next-line no-unused-vars
+let canvas, c, w, h, u, points, offset, gradient
 
 // spacing: X Coordinate spacing
 function init({ element, spacing = 40, zOffset = 10 }) {
   // create canvas element and adjust the element size
   canvas = document.createElement('canvas')
+  // eslint-disable-next-line no-restricted-globals
   canvas.width = w = innerWidth
+  // eslint-disable-next-line no-restricted-globals
   canvas.height = h = innerHeight
   // get the drawing context on the canvas by creating
   //  a CanvasRenderingContext2D
@@ -62,6 +65,7 @@ function init({ element, spacing = 40, zOffset = 10 }) {
 }
 
 // Performance
+// eslint-disable-next-line no-unused-vars
 let previousTime
 
 // update current z position and request a animation frame
@@ -82,9 +86,11 @@ function update(time) {
       if (points[i][j].z < -300) {
         gone = true
         // DEBUG
+        // eslint-disable-next-line no-unused-vars
         z300CountSmaller += 1
       } else {
         // DEBUG
+        // eslint-disable-next-line no-unused-vars
         z300CountBigger += 1
       }
     }

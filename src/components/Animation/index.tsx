@@ -7,8 +7,8 @@ import React, {
 } from 'react'
 import synthwave from '../../lib/synthwave'
 import { code } from '../../lib/synthwave.json'
-import * as classes from './index.module.css'
 import { Canvas } from '../Canvas'
+import * as classes from './index.module.css'
 
 const Code = React.lazy(() => import('../Code'))
 
@@ -19,16 +19,17 @@ export default function Animation() {
   const [showCode, setShowCode] = useState(false)
 
   useLayoutEffect(() => {
-    if (refCanvas && refCanvas.current != null) {
+    const currentCanvas = refCanvas.current
+    if (currentCanvas != null) {
       synthwave({
-        element: refCanvas.current,
+        element: currentCanvas,
         spacing,
         zOffset,
       })
     }
     return () => {
-      if (refCanvas && refCanvas.current != null) {
-        refCanvas.current.querySelector('canvas')?.remove()
+      if (currentCanvas != null) {
+        currentCanvas.querySelector('canvas')?.remove()
       }
     }
   }, [refCanvas, spacing, zOffset])
