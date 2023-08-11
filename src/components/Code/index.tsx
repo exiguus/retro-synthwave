@@ -11,11 +11,11 @@ type Block = {
   code: string
 }
 
-type Code = {
+type CodeProps = {
   blocks: Block[]
 }
 
-export default function code({ blocks }: Code) {
+export default function code({ blocks }: CodeProps) {
   return (
     <article className={classes.code}>
       {blocks.map(({ id, headline, code }) => (

@@ -1,7 +1,6 @@
-import { FunctionComponent } from 'react'
 import * as classes from './index.module.css'
 
-export const MetaNavigation: FunctionComponent = () => {
+export const MetaNavigation = () => {
   return (
     <div className={classes.metaNavigation}>
       <nav>
