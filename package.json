@@ -31,7 +31,7 @@
     "@parcel/reporter-bundle-analyzer": "^2.9.3",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@types/react-syntax-highlighter": "^13.5.2",
+    "@types/react-syntax-highlighter": "^15.5.7",
     "parcel": "^2.9.3",
     "prettier": "^2.5.0",
     "prettier-plugin-style-order": "^0.2.2",
@@ -41,7 +41,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-syntax-highlighter": "^15.4.5"
+    "react-syntax-highlighter": "^15.5.0"
   },
   "compress": {
     "test": "(.js|report.html)",

@@ -12,8 +12,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   react-syntax-highlighter:
-    specifier: ^15.4.5
-    version: 15.4.5(react@18.2.0)
+    specifier: ^15.5.0
+    version: 15.5.0(react@18.2.0)
 
 devDependencies:
   '@boxine/prettier-config':
@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^18.2.7
     version: 18.2.7
   '@types/react-syntax-highlighter':
-    specifier: ^13.5.2
-    version: 13.5.2
+    specifier: ^15.5.7
+    version: 15.5.7
   parcel:
     specifier: ^2.9.3
     version: 2.9.3
@@ -1174,8 +1174,8 @@ packages:
       '@types/react': 18.2.20
     dev: true
 
-  /@types/react-syntax-highlighter@13.5.2:
-    resolution: {integrity: sha512-sRZoKZBGKaE7CzMvTTgz+0x/aVR58ZYUTfB7HN76vC+yQnvo1FWtzNARBt0fGqcLGEVakEzMu/CtPzssmanu8Q==}
+  /@types/react-syntax-highlighter@15.5.7:
+    resolution: {integrity: sha512-bo5fEO5toQeyCp0zVHBeggclqf5SQ/Z5blfFmjwO5dkMVGPgmiwZsJh9nu/Bo5L7IHTuGWrja6LxJVE2uB5ZrQ==}
     dependencies:
       '@types/react': 18.2.20
     dev: true
@@ -2019,8 +2019,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-syntax-highlighter@15.4.5(react@18.2.0):
-    resolution: {integrity: sha512-RC90KQTxZ/b7+9iE6s9nmiFLFjWswUcfULi4GwVzdFVKVMQySkJWBuOmJFfjwjMVCo0IUUuJrWebNKyviKpwLQ==}
+  /react-syntax-highlighter@15.5.0(react@18.2.0):
+    resolution: {integrity: sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==}
     peerDependencies:
       react: '>= 0.14.0'
     dependencies:
