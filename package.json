@@ -11,10 +11,11 @@
     "fetch:data": "node ./build",
     "prebuild": "npm run fetch:data",
     "postbuild": "npm run build:report",
-    "build": "npm run build:app ",
+    "build": "npm run build:app",
     "build:app": "rm -rf ./dist/ && NODE_ENV=production parcel build ./src/index.html --dist-dir ./dist --no-cache --detailed-report 10 --reporter @parcel/reporter-bundle-analyzer --public-url /",
     "build:report": "mv ./parcel-bundle-reports/default.html ./dist/report.html && rm -rf ./parcel-bundle-reports",
     "format": "prettier --write \"**/*.{js,ts,tsx,css,html}\"",
+    "test": "npm run type-check",
     "type-check": "tsc --pretty --noEmit"
   },
   "keywords": [
@@ -30,17 +31,17 @@
     "@parcel/compressor-gzip": "^2.0.1",
     "@parcel/config-default": "^2.0.1",
     "@parcel/reporter-bundle-analyzer": "^2.2.0",
-    "@types/react": "^17.0.38",
+    "@types/react": "^18.2.20",
     "@types/react-dom": "^17.0.11",
+    "@types/react-syntax-highlighter": "^13.5.2",
     "parcel": "^2.2.0",
     "prettier": "^2.5.0",
     "prettier-plugin-style-order": "^0.2.2",
-    "typescript": "^4.5.4",
-    "@types/react-syntax-highlighter": "^13.5.2"
+    "typescript": "^4.5.4"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.4.5"
   },
   "compress": {
