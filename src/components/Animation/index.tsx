@@ -9,8 +9,8 @@ import React, {
 import { Canvas } from '../Canvas'
 import synthwave from '../../lib/synthwave'
 import SynthwaveModule from '../../lib/Synthwave.module'
+import type { Block, Languages } from '../Code'
 import * as classes from './index.module.css'
-import type { CodeBlock, SourceTypes } from './types'
 import { code } from './defaults'
 
 const Code = React.lazy(() => import('../Code'))
@@ -20,8 +20,8 @@ export default function Animation() {
   const [spacing, setSpacing] = useState<number>(40)
   const [zOffset, setZOffset] = useState<number>(10)
   const [showCode, setShowCode] = useState<boolean>(false)
-  const [source, setSource] = useState<SourceTypes>('js')
-  const [codeBlock, setCodeBlock] = useState<CodeBlock>(code.js)
+  const [source, setSource] = useState<Languages>('javascript')
+  const [codeBlock, setCodeBlock] = useState<Block>(code.javascript)
 
   const handleDownload = useCallback(() => {
     const currentCanvas = refCanvas.current
@@ -46,13 +46,13 @@ export default function Animation() {
         spacing,
         zOffset,
       }
-      if (source === 'js') {
+      if (source === 'javascript') {
         synthwave(options)
-        setCodeBlock(code.js)
+        setCodeBlock(code.javascript)
       }
-      if (source === 'ts') {
+      if (source === 'typescript') {
         SynthwaveModule(options)
-        setCodeBlock(code.ts)
+        setCodeBlock(code.typescript)
       }
     }
     return () => {
@@ -96,7 +96,11 @@ export default function Animation() {
           </button>
           <button
             title="toggle source from js to ts"
-            onClick={() => setSource(prev => (prev === 'js' ? 'ts' : 'js'))}
+            onClick={() =>
+              setSource(prev =>
+                prev === 'javascript' ? 'typescript' : 'javascript'
+              )
+            }
           >
             &lt;Source/&gt;
           </button>
