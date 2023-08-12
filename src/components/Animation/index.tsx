@@ -5,10 +5,12 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
-import { code } from '../../lib/synthwave.json'
 import { Canvas } from '../Canvas'
 import synthwave from '../../lib/synthwave'
+import SynthwaveModule from '../../lib/Synthwave.module'
 import * as classes from './index.module.css'
+import { CodeBlock, SourceTypes } from './types'
+import { code } from './defaults'
 
 const Code = React.lazy(() => import('../Code'))
 
@@ -17,22 +19,33 @@ export default function Animation() {
   const [spacing, setSpacing] = useState<number>(40)
   const [zOffset, setZOffset] = useState<number>(10)
   const [showCode, setShowCode] = useState<boolean>(false)
+  const [source, setSource] = useState<SourceTypes>('js')
+  const [codeBlock, setCodeBlock] = useState<CodeBlock>(code.js)
 
   useLayoutEffect(() => {
     const currentCanvas = refCanvas.current
     if (currentCanvas != null) {
-      synthwave({
+      currentCanvas.querySelector('canvas')?.remove()
+      const options = {
         element: currentCanvas,
         spacing,
         zOffset,
-      })
+      }
+      if (source === 'js') {
+        synthwave(options)
+        setCodeBlock(code.js)
+      }
+      if (source === 'ts') {
+        SynthwaveModule(options)
+        setCodeBlock(code.ts)
+      }
     }
     return () => {
       if (currentCanvas != null) {
         currentCanvas.querySelector('canvas')?.remove()
       }
     }
-  }, [refCanvas, spacing, zOffset])
+  }, [refCanvas, source, spacing, zOffset])
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,14 +79,18 @@ export default function Animation() {
           >
             &lt;Code/&gt;
           </button>
+          <button
+            title="toggle source from js to ts"
+            onClick={() => setSource(prev => (prev === 'js' ? 'ts' : 'js'))}
+          >
+            &lt;Source/&gt;
+          </button>
         </nav>
       </menu>
       <Canvas ref={refCanvas} />
       {showCode && (
         <Suspense fallback={<></>}>
-          <Code
-            blocks={[{ id: 'synthwave', headline: 'synthwave.js', code }]}
-          />
+          <Code blocks={[codeBlock]} />
         </Suspense>
       )}
     </main>
