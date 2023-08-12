@@ -4,6 +4,7 @@ import React, {
   useLayoutEffect,
   useEffect,
   useRef,
+  useCallback,
 } from 'react'
 import { Canvas } from '../Canvas'
 import synthwave from '../../lib/synthwave'
@@ -21,6 +22,20 @@ export default function Animation() {
   const [showCode, setShowCode] = useState<boolean>(false)
   const [source, setSource] = useState<SourceTypes>('js')
   const [codeBlock, setCodeBlock] = useState<CodeBlock>(code.js)
+
+  const handleDownload = useCallback(() => {
+    const currentCanvas = refCanvas.current
+    if (currentCanvas != null) {
+      const canvas = currentCanvas.querySelector('canvas')
+      if (canvas != null) {
+        const link = document.createElement('a')
+        const timestamp = new Date().toISOString()
+        link.download = `synthwave-${timestamp}.png`
+        link.href = canvas.toDataURL('image/png')
+        link.click()
+      }
+    }
+  }, [refCanvas])
 
   useLayoutEffect(() => {
     const currentCanvas = refCanvas.current
@@ -84,6 +99,9 @@ export default function Animation() {
             onClick={() => setSource(prev => (prev === 'js' ? 'ts' : 'js'))}
           >
             &lt;Source/&gt;
+          </button>
+          <button title="download canvas" onClick={handleDownload}>
+            &lt;Save /&gt;
           </button>
         </nav>
       </menu>
