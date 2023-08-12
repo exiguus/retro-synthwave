@@ -80,7 +80,8 @@
   },
   "author": {
     "name": "Simon Gattner",
-    "url": "https://gattner.name/"
+    "url": "https://gattner.name/",
+    "mastodon": "https://toot.community/@exiguus"
   },
   "license": "MIT",
   "repository": {
