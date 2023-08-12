@@ -10,7 +10,7 @@ import { Canvas } from '../Canvas'
 import synthwave from '../../lib/synthwave'
 import SynthwaveModule from '../../lib/Synthwave.module'
 import * as classes from './index.module.css'
-import { CodeBlock, SourceTypes } from './types'
+import type { CodeBlock, SourceTypes } from './types'
 import { code } from './defaults'
 
 const Code = React.lazy(() => import('../Code'))
