@@ -27,34 +27,34 @@
     "retro"
   ],
   "devDependencies": {
-    "@boxine/eslint-config-base": "^2.0.0",
-    "@boxine/eslint-config-jest": "^2.0.0",
-    "@boxine/eslint-config-react": "^2.0.1",
-    "@boxine/prettier-config": "^2.0.0",
-    "@commitlint/cli": "^17.8.1",
-    "@commitlint/config-conventional": "^17.8.1",
-    "@commitlint/prompt-cli": "^17.8.1",
-    "@parcel/compressor-brotli": "^2.12.0",
-    "@parcel/compressor-gzip": "^2.12.0",
-    "@parcel/config-default": "^2.12.0",
-    "@parcel/reporter-bundle-analyzer": "^2.12.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@boxine/eslint-config-base": "^2.0.2",
+    "@boxine/eslint-config-jest": "^2.0.2",
+    "@boxine/eslint-config-react": "^2.0.2",
+    "@boxine/prettier-config": "^2.0.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/prompt-cli": "^19.8.1",
+    "@parcel/compressor-brotli": "^2.15.0",
+    "@parcel/compressor-gzip": "^2.15.0",
+    "@parcel/config-default": "^2.15.0",
+    "@parcel/reporter-bundle-analyzer": "^2.15.0",
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.7",
     "@types/react-syntax-highlighter": "^15.5.13",
     "conventional-changelog-conventionalcommits": "^6.1.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.3.0",
-    "parcel": "^2.12.0",
+    "parcel": "^2.15.0",
     "prettier": "^2.8.8",
     "prettier-plugin-style-order": "^0.2.2",
     "process": "^0.11.10",
-    "typescript": "^5.5.2"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-syntax-highlighter": "^15.6.1"
   },
   "compress": {
     "test": "(.js|report.html)",
@@ -122,7 +122,8 @@
         "svgo"
       ],
       "allowedVersions": {
-        "svgo": "2.8.0"
+        "svgo": "2.8.0",
+        "eslint-plugin-jest": "26.9.0"
       }
     }
   }
