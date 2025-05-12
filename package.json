@@ -125,6 +125,11 @@
         "svgo": "2.8.0",
         "eslint-plugin-jest": "26.9.0"
       }
+    },
+    "overrides": {
+      "postcss@<8.4.31": ">=8.4.31",
+      "micromatch@<4.0.8": ">=4.0.8",
+      "prismjs@<1.30.0": ">=1.30.0"
     }
   }
 }
